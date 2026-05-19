@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Dokimion LLC — Trial by Fire</title>
+  <meta name="description" content="Digital Dokimion LLC is a creative holding company building brands across e-commerce, events, media, and technology. Trial by fire — we build through doing." />
+  <meta property="og:title" content="Digital Dokimion LLC — Trial by Fire" />
+  <meta property="og:description" content="A creative LLC powering ventures in e-commerce, affiliate marketing, events, and media." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);--text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-3xl:clamp(2.5rem,1rem + 4vw,5rem);--text-hero:clamp(3rem,0.5rem + 7vw,8rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;
+      --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+      --shadow-sm:0 1px 2px oklch(0 0 0/.3);--shadow-md:0 4px 12px oklch(0 0 0/.4);--shadow-lg:0 12px 32px oklch(0 0 0/.5);
+      --content-default:960px;--content-wide:1200px;
+      --font-display:'Cinzel','Georgia',serif;--font-body:'DM Sans','Helvetica Neue',sans-serif;
+    }
+    :root,[data-theme="dark"] {
+      --color-bg:#0e0c0a;--color-surface:#141210;--color-surface-2:#1a1815;--color-surface-offset:#201e1a;--color-surface-dynamic:#2a2824;--color-divider:#302e2a;--color-border:#3a3834;
+      --color-text:#e8e4dc;--color-text-muted:#a09a90;--color-text-faint:#605a52;--color-text-inverse:#0e0c0a;
+      --color-primary:#c9a227;--color-primary-hover:#e8bf3a;--color-primary-active:#f5d060;--color-primary-highlight:#2a2410;
+      --color-accent:#d4551a;--color-accent-hover:#e86828;--color-accent-highlight:#2d1a10;
+    }
+    [data-theme="light"] {
+      --color-bg:#faf8f4;--color-surface:#f5f2ec;--color-surface-2:#eeeae2;--color-surface-offset:#e6e0d4;--color-surface-dynamic:#ddd6c8;--color-divider:#d4ccbc;--color-border:#c8bfac;
+      --color-text:#1a1612;--color-text-muted:#6a6254;--color-text-faint:#a8a090;--color-text-inverse:#faf8f4;
+      --color-primary:#9a7810;--color-primary-hover:#7a5e08;--color-primary-active:#5c4606;--color-primary-highlight:#f5edd0;
+      --color-accent:#b84010;--color-accent-hover:#a03208;--color-accent-highlight:#fce8dc;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-20)}
+    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg)}
+    img,picture,video,svg{display:block;max-width:100%;height:auto}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.1}
+    p,li{text-wrap:pretty;max-width:68ch}
+    ::selection{background:oklch(from var(--color-primary) l c h/.3);color:var(--color-text)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    a,button,[role="button"]{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),box-shadow var(--transition-interactive),opacity var(--transition-interactive)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+    /* SCROLL REVEAL */
+    .fade-in{opacity:1}
+    @supports(animation-timeline:scroll()){
+      .fade-in{opacity:0;animation:reveal-fade linear both;animation-timeline:view();animation-range:entry 0% entry 90%}
+    }
+    @keyframes reveal-fade{to{opacity:1}}
+
+    /* NAV */
+    .skip-link{position:absolute;top:-100%;left:var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-2) var(--space-4);border-radius:var(--radius-md);font-size:var(--text-sm);z-index:1000}
+    .skip-link:focus{top:var(--space-4)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-6);background:oklch(from var(--color-bg) l c h/.88);backdrop-filter:blur(16px);border-bottom:1px solid oklch(from var(--color-text) l c h/.08)}
+    .nav-logo{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:var(--color-text)}
+    .nav-logo-text{font-family:var(--font-display);font-size:var(--text-sm);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+    .nav-links{display:flex;align-items:center;gap:var(--space-8);list-style:none}
+    .nav-links a{text-decoration:none;color:var(--color-text-muted);font-size:var(--text-sm);font-weight:500;letter-spacing:.03em}
+    .nav-links a:hover{color:var(--color-primary)}
+    .nav-right{display:flex;align-items:center;gap:var(--space-4)}
+    .theme-toggle{background:none;border:none;cursor:pointer;padding:var(--space-2);color:var(--color-text-muted);border-radius:var(--radius-md);display:flex;align-items:center}
+    .theme-toggle:hover{color:var(--color-primary)}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:var(--space-2);color:var(--color-text);flex-direction:column;gap:5px}
+    .hamburger span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:all .3s}
+    .mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;background:var(--color-bg);flex-direction:column;align-items:center;justify-content:center;gap:var(--space-8)}
+    .mobile-nav.open{display:flex}
+    .mobile-nav a{font-family:var(--font-display);font-size:var(--text-xl);text-decoration:none;color:var(--color-text);letter-spacing:.05em}
+    .mobile-nav a:hover{color:var(--color-primary)}
+    .mobile-close{position:absolute;top:var(--space-6);right:var(--space-6);background:none;border:none;cursor:pointer;color:var(--color-text-muted);font-size:var(--text-lg)}
+    @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+    /* HERO */
+    .hero{min-height:100dvh;display:grid;align-items:center;padding:var(--space-32) var(--space-6) var(--space-20);position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,oklch(.55 .15 45/.12) 0%,transparent 70%),radial-gradient(ellipse 40% 30% at 20% 70%,oklch(.45 .18 30/.08) 0%,transparent 60%)}
+    .hero-grain{position:absolute;inset:0;z-index:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .hero-inner{position:relative;z-index:1;max-width:var(--content-wide);margin-inline:auto;width:100%}
+    .hero-eyebrow{font-family:var(--font-body);font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-6);font-weight:600}
+    .hero-title{font-family:var(--font-display);font-size:var(--text-hero);font-weight:900;letter-spacing:-.01em;color:var(--color-text);line-height:1.0;margin-bottom:var(--space-8)}
+    .hero-title .gold{color:var(--color-primary)}
+    .hero-subtitle{font-size:var(--text-lg);color:var(--color-text-muted);font-weight:300;margin-bottom:var(--space-12);max-width:52ch;line-height:1.65}
+    .hero-cta-group{display:flex;flex-wrap:wrap;gap:var(--space-4)}
+    .btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-8);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;text-transform:uppercase}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .btn-primary:hover{background:var(--color-primary-hover);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+    .btn-outline{background:transparent;color:var(--color-text);border:1px solid oklch(from var(--color-text) l c h/.25)}
+    .btn-outline:hover{border-color:var(--color-primary);color:var(--color-primary)}
+    .hero-scroll-hint{position:absolute;bottom:var(--space-8);left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:var(--space-2);color:var(--color-text-faint);font-size:var(--text-xs);letter-spacing:.1em;text-transform:uppercase}
+    .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--color-primary),transparent);animation:scrollPulse 2s ease-in-out infinite}
+    @keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+    /* LAYOUT */
+    section{padding-block:clamp(var(--space-16),8vw,var(--space-32))}
+    .container{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6)}
+    .section-label{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-primary);font-weight:600;margin-bottom:var(--space-4)}
+    .section-title{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-text);margin-bottom:var(--space-6)}
+    .section-desc{font-size:var(--text-base);color:var(--color-text-muted);max-width:56ch;line-height:1.7}
+    .divider{width:100%;height:1px;background:oklch(from var(--color-text) l c h/.08)}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center}
+    .about-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);margin-top:var(--space-12)}
+    .stat-card{padding:var(--space-6);background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/.07);border-radius:var(--radius-lg)}
+    .stat-num{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-primary);font-weight:700;line-height:1}
+    .stat-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:.1em}
+    .dokimion-quote{padding:var(--space-12) var(--space-10);background:var(--color-surface);border:1px solid oklch(from var(--color-primary) l c h/.2);border-radius:var(--radius-xl);position:relative}
+    .dokimion-quote::before{content:'"';font-family:var(--font-display);font-size:8rem;line-height:.7;color:var(--color-primary);opacity:.15;position:absolute;top:var(--space-4);left:var(--space-6)}
+    .dokimion-quote blockquote{position:relative;z-index:1}
+    .dokimion-quote p{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);line-height:1.4;font-style:italic}
+    .dokimion-quote cite{display:block;margin-top:var(--space-4);font-size:var(--text-xs);color:var(--color-primary);letter-spacing:.12em;text-transform:uppercase;font-style:normal}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr}.about-stat-row{grid-template-columns:1fr 1fr}}
+
+    /* PROJECTS */
+    #projects{background:var(--color-surface)}
+    .projects-intro{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);margin-bottom:var(--space-16);align-items:end}
+    @media(max-width:768px){.projects-intro{grid-template-columns:1fr;gap:var(--space-8)}}
+    .project-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-4)}
+    .project-card{background:var(--color-bg);border:1px solid oklch(from var(--color-text) l c h/.08);border-radius:var(--radius-xl);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s cubic-bezier(.16,1,.3,1);position:relative}
+    .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .project-card:hover .project-arrow{opacity:1;transform:translate(2px,-2px)}
+    .project-card--featured{grid-column:span 7}
+    .project-card--sm{grid-column:span 5}
+    .project-card--third{grid-column:span 4}
+    @media(max-width:900px){.project-card--featured,.project-card--sm,.project-card--third{grid-column:span 12}}
+    .project-thumb-placeholder{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:var(--text-3xl);background:var(--color-surface-2)}
+    .project-body{padding:var(--space-6);flex:1;display:flex;flex-direction:column;gap:var(--space-3)}
+    .project-tag{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-primary);font-weight:600}
+    .project-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text)}
+    .project-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;flex:1}
+    .project-footer{display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-4)}
+    .project-url{font-size:var(--text-xs);color:var(--color-text-faint);letter-spacing:.05em}
+    .project-arrow{color:var(--color-primary);opacity:0;transition:all .2s ease;width:20px;height:20px}
+
+    /* VISION */
+    .vision-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-6);margin-top:var(--space-12)}
+    .vision-card{padding:var(--space-8);background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h/.07);border-radius:var(--radius-xl)}
+    .vision-icon{width:40px;height:40px;color:var(--color-primary);margin-bottom:var(--space-4)}
+    .vision-title{font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text);margin-bottom:var(--space-3)}
+    .vision-body{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7}
+
+    /* TV SHOW */
+    .show-callout{background:linear-gradient(135deg in oklch,var(--color-surface-2) 0%,var(--color-surface-offset) 100%);border:1px solid oklch(from var(--color-primary) l c h/.25);border-radius:var(--radius-xl);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;margin-top:var(--space-16)}
+    .show-callout-body{padding:clamp(var(--space-8),5vw,var(--space-16));display:flex;flex-direction:column;justify-content:center;gap:var(--space-6)}
+    .show-badge{display:inline-flex;align-items:center;gap:var(--space-2);background:var(--color-primary-highlight);color:var(--color-primary);padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;width:fit-content}
+    .show-title{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--color-text);line-height:1.0}
+    .show-title em{color:var(--color-primary);font-style:normal}
+    .show-desc{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.7;max-width:44ch}
+    .show-visual{background:linear-gradient(135deg,oklch(.25 .12 45) 0%,oklch(.15 .08 30) 100%);display:flex;align-items:center;justify-content:center;min-height:300px;position:relative;overflow:hidden}
+    .show-visual-text{font-family:var(--font-display);font-size:clamp(3rem,8vw,7rem);font-weight:900;color:oklch(.8 .15 45/.15);text-transform:uppercase;text-align:center;line-height:.9;letter-spacing:-.02em;position:absolute}
+    .show-icon{position:relative;z-index:1;color:var(--color-primary)}
+    @media(max-width:768px){.show-callout{grid-template-columns:1fr}.show-visual{min-height:200px}}
+
+    /* LLC */
+    .llc-section{background:var(--color-surface)}
+    .llc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:var(--space-16);align-items:start}
+    .llc-list{list-style:none;margin-top:var(--space-8);display:flex;flex-direction:column;gap:var(--space-4)}
+    .llc-item{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-4);background:var(--color-bg);border:1px solid oklch(from var(--color-text) l c h/.07);border-radius:var(--radius-lg)}
+    .llc-item-icon{color:var(--color-primary);flex-shrink:0;margin-top:2px}
+    .llc-item-title{font-weight:600;font-size:var(--text-sm);color:var(--color-text);margin-bottom:var(--space-1)}
+    .llc-item-desc{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.6}
+    .revenue-flow{background:var(--color-bg);border:1px solid oklch(from var(--color-text) l c h/.08);border-radius:var(--radius-xl);padding:var(--space-8)}
+    .flow-title{font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text);margin-bottom:var(--space-6)}
+    .flow-item{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid oklch(from var(--color-text) l c h/.06)}
+    .flow-item:last-child{border-bottom:none}
+    .flow-dot{width:10px;height:10px;border-radius:var(--radius-full);flex-shrink:0}
+    .flow-label{font-size:var(--text-sm);color:var(--color-text-muted);flex:1}
+    .flow-stream{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint)}
+    .flow-arrow{text-align:center;padding:var(--space-3) 0;color:var(--color-primary);font-size:var(--text-lg)}
+    @media(max-width:768px){.llc-grid{grid-template-columns:1fr}}
+
+    /* CONTACT */
+    .contact-section{text-align:center}
+    .contact-inner{max-width:600px;margin-inline:auto}
+    .contact-email{display:inline-flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);text-decoration:none;padding:var(--space-4) var(--space-8);border-radius:var(--radius-full);border:1px solid oklch(from var(--color-primary) l c h/.3);margin-top:var(--space-8);transition:all .2s ease}
+    .contact-email:hover{background:var(--color-primary-highlight);border-color:var(--color-primary)}
+
+    /* FOOTER */
+    footer{padding:var(--space-12) var(--space-6);border-top:1px solid oklch(from var(--color-text) l c h/.08)}
+    .footer-inner{max-width:var(--content-wide);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-6)}
+    .footer-logo{font-family:var(--font-display);font-size:var(--text-sm);color:var(--color-text-muted);letter-spacing:.08em;text-transform:uppercase}
+    .footer-links{display:flex;gap:var(--space-6)}
+    .footer-links a{font-size:var(--text-xs);color:var(--color-text-faint);text-decoration:none;letter-spacing:.05em}
+    .footer-links a:hover{color:var(--color-primary)}
+    .footer-copy{font-size:var(--text-xs);color:var(--color-text-faint)}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="Digital Dokimion LLC Home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <polygon points="16,2 30,28 2,28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        <polygon points="16,8 26,26 6,26" fill="oklch(0.55 0.15 45 / 0.15)"/>
+        <line x1="16" y1="8" x2="16" y2="22" stroke="var(--color-primary)" stroke-width="1.5"/>
+        <circle cx="16" cy="22" r="2" fill="var(--color-primary)"/>
+      </svg>
+      <span class="nav-logo-text">Digital Dokimion</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#llc">Structure</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" aria-label="Open menu" id="hamburgerBtn" style="display:flex">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#vision" class="mobile-link">Vision</a>
+    <a href="#llc" class="mobile-link">Structure</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Digital Dokimion LLC</p>
+        <h1 id="hero-heading" class="hero-title">Forged<br/>Through<br/><span class="gold">Fire.</span></h1>
+        <p class="hero-subtitle">A creative holding company building brands across e-commerce, affiliate marketing, live events, and media — powered by the principle that mastery is earned through trial.</p>
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">View Our Projects</a>
+          <a href="#vision" class="btn btn-outline">Our Vision</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="fade-in">
+            <p class="section-label">The Name</p>
+            <h2 id="about-heading" class="section-title">Dokimion — Greek for "Trial by Fire"</h2>
+            <p class="section-desc">The Greek word <em>dokimion</em> refers to the proving of worth through challenge — the same fire that refines gold. Digital Dokimion LLC was built on this truth: real business skill isn't taught, it's forged.</p>
+            <p class="section-desc" style="margin-top:var(--space-4)">Founded by Kayla Zayyad — a former casino operations veteran turned serial entrepreneur — the LLC exists as a structured vehicle to house creative ventures, let revenue flow freely between brands, and scale through learning by doing.</p>
+            <div class="about-stat-row">
+              <div class="stat-card fade-in"><div class="stat-num">5</div><div class="stat-label">Active Brands</div></div>
+              <div class="stat-card fade-in"><div class="stat-num">4+</div><div class="stat-label">Revenue Streams</div></div>
+              <div class="stat-card fade-in"><div class="stat-num">1</div><div class="stat-label">Vision</div></div>
+            </div>
+          </div>
+          <div class="fade-in">
+            <div class="dokimion-quote">
+              <blockquote>
+                <p>"I created the LLC to be organized and allow money to flow — and to keep learning what it means to build."</p>
+                <cite>— Kayla Zayyad, Founder, Digital Dokimion LLC</cite>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="projects-intro">
+          <div class="fade-in"><p class="section-label">Our Portfolio</p><h2 id="projects-heading" class="section-title">Five Brands. One Mission.</h2></div>
+          <div class="fade-in"><p class="section-desc">Each project is a live experiment — a brand built in public, refined through real customer feedback, and scaled through the lessons of doing.</p></div>
+        </div>
+        <div class="project-grid">
+          <a href="https://patchdaydrama.com" target="_blank" rel="noopener noreferrer" class="project-card project-card--featured fade-in">
+            <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,oklch(.2 .08 290),oklch(.15 .06 280))"><span aria-hidden="true">🎭</span></div>
+            <div class="project-body">
+              <span class="project-tag">AI · Web Technology</span>
+              <h3 class="project-name">Patch Day Drama</h3>
+              <p class="project-desc">An AI-powered content and entertainment platform. Built on cutting-edge ML integrations, Patch Day Drama explores the intersection of artificial intelligence and creative storytelling — from automated content to interactive digital experiences.</p>
+              <div class="project-footer"><span class="project-url">patchdaydrama.com</span><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+          </a>
+          <a href="https://millibo.com" target="_blank" rel="noopener noreferrer" class="project-card project-card--sm fade-in">
+            <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,oklch(.22 .06 160),oklch(.18 .05 150))"><span aria-hidden="true">🧳</span></div>
+            <div class="project-body">
+              <span class="project-tag">E-Commerce · Shopify</span>
+              <h3 class="project-name">Millibo</h3>
+              <p class="project-desc">A curated Shopify store for maternity and travel products. Millibo blends lifestyle branding with e-commerce functionality — built for modern moms on the move, with dropshipping integration and affiliate partnerships.</p>
+              <div class="project-footer"><span class="project-url">millibo.com</span><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+          </a>
+          <a href="https://digitaldoki.com" target="_blank" rel="noopener noreferrer" class="project-card project-card--third fade-in">
+            <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,oklch(.22 .1 45),oklch(.16 .08 40))"><span aria-hidden="true">⚡</span></div>
+            <div class="project-body">
+              <span class="project-tag">Brand · Digital</span>
+              <h3 class="project-name">Digital Doki</h3>
+              <p class="project-desc">The digital brand hub and influencer-facing gateway — a lifestyle technology platform connecting creative commerce, social media strategy, and digital content monetization.</p>
+              <div class="project-footer"><span class="project-url">digitaldoki.com</span><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+          </a>
+          <a href="https://dealmyevent.com" target="_blank" rel="noopener noreferrer" class="project-card project-card--third fade-in">
+            <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,oklch(.22 .1 30),oklch(.17 .08 25))"><span aria-hidden="true">🎲</span></div>
+            <div class="project-body">
+              <span class="project-tag">Events · Courses</span>
+              <h3 class="project-name">Deal My Event</h3>
+              <p class="project-desc">Group-buying event services platform. Connects clients to premium casino party and event packages — with an integrated course marketplace for event professionals. Powered by Groupon strategy and influencer partnerships.</p>
+              <div class="project-footer"><span class="project-url">dealmyevent.com</span><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+          </a>
+          <a href="https://kaylazayyad.com" target="_blank" rel="noopener noreferrer" class="project-card project-card--third fade-in">
+            <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,oklch(.22 .08 340),oklch(.17 .06 330))"><span aria-hidden="true">✦</span></div>
+            <div class="project-body">
+              <span class="project-tag">Personal Brand</span>
+              <h3 class="project-name">Kayla Zayyad</h3>
+              <p class="project-desc">Founder's personal brand — entrepreneur, strategist, creator. The human story behind Digital Dokimion LLC: casino vet turned digital business builder, sharing the journey publicly.</p>
+              <div class="project-footer"><span class="project-url">kaylazayyad.com</span><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+    <!-- VISION -->
+    <section id="vision" aria-labelledby="vision-heading">
+      <div class="container">
+        <div class="fade-in">
+          <p class="section-label">Strategic Vision</p>
+          <h2 id="vision-heading" class="section-title">Where We're Building</h2>
+          <p class="section-desc">Digital Dokimion isn't just a collection of projects — it's a compounding business architecture. Every vertical feeds the others.</p>
+        </div>
+        <div class="vision-grid">
+          <div class="vision-card fade-in">
+            <svg class="vision-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <h3 class="vision-title">Affiliate Marketing</h3>
+            <p class="vision-body">Build a network of affiliate-monetized content channels across all brands. Each site becomes a revenue node — earning commissions on products we curate, recommend, and review for our target audiences.</p>
+          </div>
+          <div class="vision-card fade-in">
+            <svg class="vision-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <h3 class="vision-title">Dropshipping & E-Commerce</h3>
+            <p class="vision-body">Millibo leads as the e-commerce flagship — dropshipping curated products with zero inventory risk. The model scales to new product verticals as audience demand emerges.</p>
+          </div>
+          <div class="vision-card fade-in">
+            <svg class="vision-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <h3 class="vision-title">Influencer Casino Parties</h3>
+            <p class="vision-body">Target influencers in lifestyle, entertainment, and luxury content to book Black Diamond Casino Events. A party becomes content. Content becomes reach. Reach becomes revenue.</p>
+          </div>
+          <div class="vision-card fade-in">
+            <svg class="vision-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            <h3 class="vision-title">Deal With It — TV Show</h3>
+            <p class="vision-body">An original concept bridging entrepreneurship, entertainment, and casino culture. Think Shark Tank meets high-stakes Vegas — where real decisions are made under pressure.</p>
+          </div>
+          <div class="vision-card fade-in">
+            <svg class="vision-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <h3 class="vision-title">Monetization Architecture</h3>
+            <p class="vision-body">Revenue enters through product sales, events, courses, and affiliate commissions — then flows as capital to fuel the next experiment. One entity. Multiple income streams. Total clarity.</p>
+          </div>
+          <div class="vision-card fade-in">
+            <svg class="vision-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h3 class="vision-title">Business Education</h3>
+            <p class="vision-body">Every mistake and win is a curriculum. The long game includes courses, content, and community — teaching the Dokimion method of building through trial: real businesses, real stakes, real lessons.</p>
+          </div>
+        </div>
+        <div class="show-callout fade-in">
+          <div class="show-callout-body">
+            <div class="show-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              Original Concept
+            </div>
+            <h3 class="show-title"><em>Deal With It</em></h3>
+            <p class="show-desc">A television concept at the intersection of entrepreneurship, entertainment, and the casino world. Think Shark Tank meets high-stakes Vegas — where real business decisions are made under pressure, and the only way out is to deal with it.</p>
+            <a href="#contact" class="btn btn-primary" style="width:fit-content">Express Interest</a>
+          </div>
+          <div class="show-visual" aria-hidden="true">
+            <div class="show-visual-text">Deal<br/>With<br/>It</div>
+            <svg class="show-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+    <!-- LLC -->
+    <section id="llc" class="llc-section" aria-labelledby="llc-heading">
+      <div class="container">
+        <div class="llc-grid">
+          <div class="fade-in">
+            <p class="section-label">Why an LLC?</p>
+            <h2 id="llc-heading" class="section-title">Structure is Strategy</h2>
+            <p class="section-desc">The LLC isn't just a legal formality — it's the financial architecture that makes multi-brand growth possible. Organization creates velocity.</p>
+            <ul class="llc-list" role="list">
+              <li class="llc-item"><svg class="llc-item-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div><div class="llc-item-title">Liability Protection</div><div class="llc-item-desc">Each brand's risks are contained within the LLC umbrella — personal assets stay protected while ventures take calculated risks.</div></div></li>
+              <li class="llc-item"><svg class="llc-item-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><div><div class="llc-item-title">Clean Money Flow</div><div class="llc-item-desc">Revenue from all brands flows into one entity — simplifying taxes, enabling reinvestment, and providing a clear financial picture at any moment.</div></div></li>
+              <li class="llc-item"><svg class="llc-item-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><div><div class="llc-item-title">Brand Scalability</div><div class="llc-item-desc">New ventures can be launched under the same entity — reducing friction, leveraging existing relationships, and maintaining a single business identity.</div></div></li>
+              <li class="llc-item"><svg class="llc-item-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><div><div class="llc-item-title">Long-Term Positioning</div><div class="llc-item-desc">The LLC creates the foundation for equity, potential investment, partnerships, and eventual acquisition — turning active hustle into a transferable asset.</div></div></li>
+            </ul>
+          </div>
+          <div class="fade-in">
+            <div class="revenue-flow">
+              <h3 class="flow-title">Revenue Flow Architecture</h3>
+              <div class="flow-item"><div class="flow-dot" style="background:var(--color-primary)"></div><span class="flow-label">E-Commerce Sales (Millibo)</span><span class="flow-stream">Product Revenue</span></div>
+              <div class="flow-item"><div class="flow-dot" style="background:var(--color-accent)"></div><span class="flow-label">Event Bookings (Deal My Event + Black Diamond)</span><span class="flow-stream">Service Revenue</span></div>
+              <div class="flow-item"><div class="flow-dot" style="background:#5591c7"></div><span class="flow-label">Affiliate Commissions (All Brands)</span><span class="flow-stream">Passive Revenue</span></div>
+              <div class="flow-item"><div class="flow-dot" style="background:#6daa45"></div><span class="flow-label">Course & Digital Products (Teachable)</span><span class="flow-stream">Digital Revenue</span></div>
+              <div class="flow-item"><div class="flow-dot" style="background:var(--color-text-muted)"></div><span class="flow-label">Influencer Casino Party Packages</span><span class="flow-stream">Premium Revenue</span></div>
+              <div class="flow-arrow">↓</div>
+              <div style="background:var(--color-primary-highlight);border-radius:var(--radius-lg);padding:var(--space-4);border:1px solid oklch(from var(--color-primary) l c h/.25)">
+                <div style="font-family:var(--font-display);font-size:var(--text-sm);color:var(--color-primary);font-weight:700;margin-bottom:var(--space-1)">Digital Dokimion LLC</div>
+                <div style="font-size:var(--text-xs);color:var(--color-text-muted)">All revenue consolidated → taxed once → reinvested into growth</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="divider"></div>
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-inner fade-in">
+          <p class="section-label">Get In Touch</p>
+          <h2 id="contact-heading" class="section-title" style="text-align:center">Let's Build Something.</h2>
+          <p class="section-desc" style="margin-inline:auto;text-align:center">Whether you're an influencer looking to book a casino party, a brand interested in partnership, or an investor who sees the vision — the fire is open.</p>
+          <a href="mailto:hello@digitaldokimion.com" class="contact-email" aria-label="Email Digital Dokimion LLC">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hello@digitaldokimion.com
+          </a>
+          <div style="margin-top:var(--space-12);display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap">
+            <a href="https://patchdaydrama.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Patch Day Drama</a>
+            <a href="https://millibo.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Millibo</a>
+            <a href="https://dealmyevent.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Deal My Event</a>
+            <a href="https://kaylazayyad.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Kayla Zayyad</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Digital Dokimion LLC &nbsp;·&nbsp; Trial by Fire</div>
+      <div class="footer-links">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#vision">Vision</a><a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2026 Digital Dokimion LLC. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    (function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';r.setAttribute('data-theme',d);function setIcon(m){if(!t)return;t.setAttribute('aria-label','Switch to '+(m==='dark'?'light':'dark')+' mode');t.innerHTML=m==='dark'?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'}setIcon(d);t&&t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);setIcon(d)})})();
+    const hamburger=document.getElementById('hamburgerBtn'),mobileNav=document.getElementById('mobileNav'),mobileClose=document.getElementById('mobileClose'),mobileLinks=document.querySelectorAll('.mobile-link');
+    function openMenu(){mobileNav.classList.add('open');hamburger.setAttribute('aria-expanded','true')}
+    function closeMenu(){mobileNav.classList.remove('open');hamburger.setAttribute('aria-expanded','false')}
+    hamburger.addEventListener('click',openMenu);mobileClose.addEventListener('click',closeMenu);mobileLinks.forEach(l=>l.addEventListener('click',closeMenu));
+    const sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll',()=>{let c='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--color-primary)':''})},{passive:true});
+  </script>
+</body>
+</html>
